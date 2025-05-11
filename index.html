@@ -77,15 +77,18 @@
 
     .tags {
       font-style: italic;
+      font-size: 1.3rem;
     }
 
     .quote {
       font-style: italic;
       color: var(--quote-color);
+      max-width: 600px;
+      margin-left: 15px;
     }
 
-    .mantra {
-      font-size: 1.3rem;
+    .team-card {
+      padding-inline: 10px;
     }
 
     .name {
@@ -141,11 +144,20 @@
       h1 {
         font-size: 3.5rem !important;
       }
-      .mantra {
+      h2 {
+        font-size: 1.8rem;
+      }
+      .tags {
         font-size: 1rem;
+      }
+      .mantra {
+        font-size: 1.4rem;
       }
       .quote {
         font-size: 1rem;
+      }
+      .mission-card {
+        margin-top: 30px;
       }
       .card, .team-card {
         padding: 15px;
@@ -194,14 +206,14 @@
   <span class="theme-toggle" onclick="toggleTheme()">🌙</span>
 
   <header class="hero relative">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row relative z-10">
+    <div class="max-w-8xl mx-auto flex flex-col md:flex-row relative z-10 justify-center">
       <div class="mb-6 md:mb-0 flex justify-center">
         <img src="assets/logo.png" alt="Lectūra Logo" class="logo">
       </div>
-      <div class="md:w-1/2 text-center md:text-left">
-        <h1 class="text-5xl md:text-6xl font-bold mb-4">Lectūra</h1>
+      <div class="text-center md:text-left">
+        <h1 class="text-5xl md:text-6xl font-bold mb-4">Lectūra AI</h1>
         <p class="text-2xl md:text-3xl mantra">Curiosity Has a Voice. Let It Teach You.</p>
-        <p class="mb-8 mt-1 tags">Generate Lectures. Customize Instructors. Get Real-time Personalized Learning.</p>
+        <p class="text-2xl md:text-3xl mb-8 mt-1 tags">Generate Lectures. Customize Instructors. Get Real-time Personalized Learning.</p>
         <div class="flex mb-4 header-flex">
           <img src="assets/feynman.png" alt="Richard Feynman" class="w-16 h-16 rounded-full mr-2 feynman-img"> <!-- Reduced to mr-2 -->
           <div>
@@ -214,7 +226,7 @@
   </header>
 
   <section class="px-4">
-    <div class="max-w-6xl mx-auto card">
+    <div class="max-w-6xl mx-auto card mission-card">
       <div class="flex flex-col md:flex-row items-center">
         <div class="md:w-1/2 mb-6 md:mb-0 text-center">
           <h2 class="text-4xl font-bold mb-6">Mission Statement</h2>
@@ -233,7 +245,7 @@
             <source src="assets/lectura.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-          <a href="https://huggingface.co/spaces/Jaward/Professor-AI-Feynman" target="_blank" class="mt-4 inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 try">Try Prototype on Huggingface</a>
+          <a href="https://huggingface.co/spaces/Jaward/Professor-AI-Feynman" target="_blank" class="mt-4 inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 try">Try Prototype</a>
         </div>
       </div>
     </div>
