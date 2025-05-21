@@ -5,36 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lectūra AI</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="icon" href="assets/logo.png" type="image/png">
   <style>
-    :root {
-      --bg-color: #fff;
-      --text-color: #000;
-      --card-bg: #fdfdfd;
-      --card-shadow: 0 0 2rem rgba(0, 0, 0, 0.14);
-      --quote-color: #000;
-      --text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
-      --border-color: #cfcfcf;
-    }
-
-    [data-theme="dark"] {
-      --bg-color: #000;
-      --text-color: #fff;
-      --card-bg: #1a1a1a;
-      --card-shadow: 0 0 2rem rgba(255, 255, 255, 0.14);
-      --quote-color: #fff;
-      --text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
-      --border-color: #444;
-    }
-
     body {
-      background: var(--bg-color);
+      background: linear-gradient(to bottom, #1a1a1a, #4a4a4a);
       font-family: fangsong;
-      color: var(--text-color);
+      color: #fff;
       overflow-x: hidden;
       position: relative;
       margin: 0;
       padding: 0;
-      transition: background-color 0.2s ease, color 0.2s ease;
       transform: translateZ(0);
     }
 
@@ -45,36 +25,33 @@
     svg {
       display: inline;
     }
-    
-    .mission-vid {
-        margin-top: 40px;
-    }
 
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
-    .hero, .section {
+    .hero {
       position: relative;
       overflow: hidden;
-      padding: 100px 20px 0;
+      padding: 60px 20px 80px;
+      
+    }
+
+    .section {
+      position: relative;
+      overflow: hidden;
+      padding: 60px 20px 0;
     }
 
     .card, .team-card {
-      background: var(--card-bg);
-      box-shadow: var(--card-shadow);
+      background: linear-gradient(135deg, #2a2a2a, #6a6a6a);
+      box-shadow: 0 0 2rem rgba(255, 255, 255, 0.14);
       border-radius: 30px;
       padding: 30px;
       position: relative;
       overflow: hidden;
     }
 
-    .card::before, .team-card::before {
-      content: '';
-      position: absolute;
-      top: -50%; left: -50%;
-      width: 200%; height: 200%;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-      animation: ripple 8s infinite;
-      z-index: -1;
+    .mission-vid {
+      margin-top: 40px;
     }
 
     @keyframes ripple {
@@ -84,12 +61,12 @@
 
     .tags {
       font-style: italic;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
     }
 
     .quote {
       font-style: italic;
-      color: var(--quote-color);
+      color: #fff;
       max-width: 600px;
       margin-left: 15px;
     }
@@ -106,7 +83,7 @@
       border-radius: 30px;
       padding: 10px 30px;
       background-color: black;
-      width: 100%;
+      width: 100;
     }
 
     h1 {
@@ -123,20 +100,11 @@
     }
 
     .feynman-img, .member-img {
-      border: 6px solid var(--border-color);
-    }
-
-    .theme-toggle {
-      position: fixed !important;
-      top: 20px;
-      right: 20px;
-      cursor: pointer;
-      font-size: 1.5rem;
-      z-index: 1000;
+      border: 6px solid #cfcfcf;
     }
 
     .mission-img {
-        border-radius: 30px;
+      border-radius: 30px;
     }
 
     .card .flex {
@@ -146,60 +114,111 @@
       gap: 1rem;
     }
     .links {
-      color: blue;
+      color: #93c5fd;
       text-decoration: underline;
     }
 
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 3.5rem !important;
-      }
-      h2 {
-        font-size: 1.8rem !important;
-      }
-      .tags {
-        font-size: 1rem;
-      }
-      .mantra {
-        font-size: 1.2rem;
-      }
-      .quote {
-        font-size: 1.2rem;
-      }
-      .mission-card {
-        margin-top: 30px;
-      }
-      .card, .team-card {
-        padding: 15px;
-      }
-      img {
-        height: auto;
-        width: 100%;
-      }
-      
-      .mission-vid {
-        margin-top: -60px;
-      }
-      .logo {
-        width: 230px !important;
-      }
-      .feynman-img, .member-img {
-        width: 50px;
-        height: 50px;
-      }
-      .md\:w-1\/2, .md\:w-full {
-        width: 100%;
-      }
-      .header-flex, .team-flex {
-        flex-direction: row !important;
-        align-items: flex-start;
-        text-align: left;
-      }
-      .section {
-        margin-bottom: 10rem;
-      }
+    nav {
+      display: flex;
+      align-items: center;
+      background: transparent;
+      border: 2px solid transparent;
+      border-radius: 50px;
+      padding: 5px 15px;
+      font-family: cursive;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: #fff;
+      text-align: center;
+      z-index: 1000;
+      margin-bottom: 50px;
+    }
+    .logo-container {
+      background: linear-gradient(135deg, #2a2a2a, #6a6a6a);
+      box-shadow: 0 0 2rem rgba(255, 255, 255, 0.14);
+      width: 170px;
+      border-radius: 50px;
+      padding: 5px;
     }
 
+    .logo-feather {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 3px;
+      stroke: #f4c430;
+    }
+  @media (max-width: 768px) {
+  h1 {
+    font-size: 3.5rem !important;
+    text-align: center; /* Center h1 */
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  .tags {
+    font-size: 1rem;
+    text-align: center; /* Center tags */
+  }
+  .mantra {
+    font-size: 1.2rem;
+    text-align: center; /* Center mantra */
+  }
+  .quote {
+    font-size: 1.2rem;
+  }
+  .mission-card {
+    margin-top: 30px;
+  }
+  .card, .team-card {
+    padding: 15px;
+  }
+  .mission-vid {
+    margin-top: -60px;
+  }
+  img {
+    height: auto;
+    width: 100%;
+  }
+  .logo-container {
+    font-size: 1rem;
+    padding: 5px 10px;
+    width: 150px;
+  }
+  .logo-feather {
+    width: 20px;
+    height: 20px;
+  }
+  .feynman-img, .member-img {
+    width: 50px;
+    height: 50px;
+  }
+  .hero-img {
+    width: 230px;
+    margin-bottom: 50px;
+    display: block; 
+    margin-right: auto; 
+    margin-left: 0px !important;
+  }
+  .md\:w-1\/2, .md\:w-full {
+    width: 100%;
+    justify-content: center;
+  }
+  .header-flex, .team-flex {
+    flex-direction: row !important;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .section {
+    margin-bottom: 8rem;
+    padding: 40px 20px 0;
+  }
+  .hero {
+    padding: 30px 20px 60px;
+  }
+  .demo-wrapper {
+    margin-top: 20px;
+  }
+}
     @media (min-width: 769px) and (max-width: 1024px) {
       h1 {
         font-size: 4.5rem !important;
@@ -214,18 +233,33 @@
         padding: 20px;
       }
     }
+    .demo-wrapper {
+      margin-top: 80px;
+    }
+    .hero-img {
+      margin-left: 80px;
+      width: 400px;
+    }
   </style>
 </head>
 <body class="min-h-screen">
-  <span class="theme-toggle" onclick="toggleTheme()">🌙</span>
-
   <header class="hero relative">
-    <div class="max-w-8xl mx-auto flex flex-col md:flex-row relative z-10 justify-center">
-      <div class="mb-6 md:mb-0 flex justify-center">
-        <img src="assets/logo.png" alt="Lectūra Logo" class="logo">
+    <nav>
+      <div class="logo-container">
+        <svg class="logo-feather" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+          <line x1="16" y1="8" x2="2" y2="22"></line>
+          <line x1="17.5" y1="15" x2="9" y2="15"></line>
+        </svg>
+        Lectūra Labs
       </div>
-      <div class="text-center md:text-left">
-        <h1 class="text-5xl md:text-6xl font-bold mb-4">Lectūra AI</h1>
+    </nav>
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row relative z-10">
+      <div class="md:w-1/2 flex justify-start">
+        <img src="assets/logo.png" alt="Hero Image" class="h-auto hero-img rounded-lg">
+      </div>
+      <div class="md:w-1/2 text-left">
+        <h1 class="text-5xl md:text-6xl font-bold mb-8">Lectūra AI</h1>
         <p class="text-2xl md:text-3xl mantra">Curiosity Has a Voice. Let It Teach You.</p>
         <p class="text-2xl md:text-3xl mb-8 mt-1 tags">Generate Lectures. Customize Instructors. Get Real-time Personalized Learning.</p>
         <div class="flex mb-4 header-flex">
@@ -243,80 +277,50 @@
     <div class="max-w-6xl mx-auto card mission-card">
       <div class="flex flex-col md:flex-row items-center">
         <div class="md:w-1/2 mb-6 md:mb-0 text-center">
-          <h2 class="text-4xl font-bold mb-6">Mission Statement</h2>
-          <p class="text-lg text-justify mission">Today’s educational systems and institutions, now primarily built for scale and profit, often fall short of meeting the distinct learning preferences of the individual learner. Lectures are one-size-fits-all, learning paths are rigid, deliveries are less captivating and access is unequal — too often, curiosity is stifled rather than sparked. With Lectūra, we believe <b>YOU</b> can flip that script. <br><br>We draw inspiration from Richard Feynman’s core belief - that anyone, with curiosity, clear thinking, and persistence, can understand even the most complex ideas. He taught that true learning is not memorizing facts, but building intuition, explaining things so simply you could teach them yourself. At Lectūra, we’re building AI educational tools that are rooted in that same philosophy, tools that empower anyone, anywhere, to teach themselves anything. <br><br>We give learners complete control over what to learn, how to learn it, and how deep to go. Our mission is to unlock personalized learning journeys that adapt to the learner, not the other way around. Our goal is audacious but simple: make the pursuit of knowledge limitless, personal, and exciting for everyone.</p>
+          <h2 class="text-4xl font-bold mb-6">Mission</h2>
+          <p class="text-lg text-justify mission">Today’s educational systems, now primarily built for scale and profit, often fall short of meeting the distinct learning preferences of the individual learner. Lectures are one-size-fits-all, learning paths are rigid, deliveries are less captivating and access is unequal — too often, curiosity is stifled rather than sparked. With Lectūra, we believe <b>YOU</b> can flip that script. <br><br>We draw inspiration from Richard Feynman’s core belief - that anyone, with curiosity, clear thinking, and persistence, can understand even the most complex ideas. He taught that true understanding stems from being able to explain things so simple you could teach them yourself. At Lectūra, we’re building AI educational tools that are rooted in that same philosophy, tools that empower anyone, anywhere, to teach themselves anything. Lectūra is not just an AI-powered tool, it’s your personal gateway to mastery. <br><br>We give learners complete control over what to learn, how to learn it, and how deep to go. Our mission is to unlock personalized learning journeys that adapt to the learner, not the other way around. Our goal is audacious but simple: make the pursuit of knowledge limitless, personal, and joyful for everyone.</p>
         </div>
         <div class="md:w-1/2 mt-6 md:mt-0">
-            <video class="w-full mission-vid" controls loop autoplay muted playsinline>
-                <source src="assets/mission.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-        </div>
-      </div>
-    </div>
-    <div class="max-w-6xl mx-auto mt-10 card">
-      <div class="flex flex-col md:flex-row">
-        <div class="md:w-full mb-6 md:mb-0 text-center">
-          <h2 class="text-4xl font-bold mb-6">First Research Prototype</h2>
-          <video class="w-full" controls loop autoplay muted playsinline>
-            <source src="assets/lectura.mp4" type="video/mp4">
+          <video class="w-full mission-vid" loop autoplay muted playsinline >
+            <source src="assets/mission.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-          <a href="https://huggingface.co/spaces/Jaward/Professor-AI-Feynman" target="_blank" class="mt-4 inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 try">Try Prototype</a>
         </div>
-      </div>
+      </div> 
     </div>
+
+    <div class="demo-wrapper">
+      <h2 class="text-4xl font-bold mb-3 text-center">First Research Prototype</h2>  
+      <iframe name="panorama" id="iframe" src="https://jaward-Professor-AI-Feynman.hf.space" 
+      frameborder="0" allowfullscreen
+      style="border-radius: 30px; width: 100%; height: 1200px;">
+      </iframe>
+    </div>
+
     <div class="max-w-6xl mx-auto mt-10 team-card mb-10">
-      <h2 class="text-4xl font-bold mb-6 text-center">Team</h2>
       <div class="flex flex-col md:flex-row items-center px-5">
         <div class="md:w-1/2 mb-6 md:mb-0">
-          <div class="flex mb-4 team-flex">
-            <img src="assets/jaward.jpg" alt="Jaward Sesay" class="w-16 h-16 rounded-full mr-2 member-img">
+          <div class="flex mb-4 team-flex mt-4">
+            <img src="assets/logo.png" alt="Lectūra Labs" class="w-16 h-16 rounded-full mr-2 member-img">
             <div>
-              <p class="text-xl font-bold mb-1">Jaward Sesay - Founder</p>
-              <p class="text-lg">Only me here at the moment:) learn more about me through my work:<br>🤗 Huggingface: <a href="https://huggingface.co/Jaward" class="links">https://huggingface.co/Jaward</a><br><svg height="20" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="20" data-view-component="true" class="octicon octicon-mark-github v-align-middle">
+              <p class="text-xl font-bold mb-1">Lectūra Labs</p>
+              <p class="text-lg">Follow us on:<br> Twitter/𝕏: <a href="https://x.com/lectura_ai" class="links">https://x.com/lectura_ai</a><br><svg height="20" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="20" data-view-component="true" class="octicon octicon-mark-github v-align-middle">
                 <path d="M12 1C5.9225 1 1 5.9225 1 12C1 16.8675 4.14875 20.9787 8.52125 22.4362C9.07125 22.5325 9.2775 22.2025 9.2775 21.9137C9.2775 21.6525 9.26375 20.7862 9.26375 19.865C6.5 20.3737 5.785 19.1912 5.565 18.5725C5.44125 18.2562 4.905 17.28 4.4375 17.0187C4.0525 16.8125 3.5025 16.3037 4.42375 16.29C5.29 16.2762 5.90875 17.0875 6.115 17.4175C7.105 19.0812 8.68625 18.6137 9.31875 18.325C9.415 17.61 9.70375 17.1287 10.02 16.8537C7.5725 16.5787 5.015 15.63 5.015 11.4225C5.015 10.2262 5.44125 9.23625 6.1425 8.46625C6.0325 8.19125 5.6475 7.06375 6.2525 5.55125C6.2525 5.55125 7.17375 5.2625 9.2775 6.67875C10.1575 6.43125 11.0925 6.3075 12.0275 6.3075C12.9625 6.3075 13.8975 6.43125 14.7775 6.67875C16.8813 5.24875 17.8025 5.55125 17.8025 5.55125C18.4075 7.06375 18.0225 8.19125 17.9125 8.46625C18.6138 9.23625 19.04 10.2125 19.04 11.4225C19.04 15.6437 16.4688 16.5787 14.0213 16.8537C14.42 17.1975 14.7638 17.8575 14.7638 18.8887C14.7638 20.36 14.75 21.5425 14.75 21.9137C14.75 22.2025 14.9563 22.5462 15.5063 22.4362C19.8513 20.9787 23 16.8537 23 12C23 5.9225 18.0775 1 12 1Z"></path>
-              </svg> Github: <a href="https://github.com/Jaykef" class="links">https://github.com/Jaykef</a><br> Reach Out: jawardsesaymail@gmail.com</p>
+              </svg> Github: <a href="https://github.com/LecturaLabsAI" class="links">https://github.com/LecturaLabsAI</a><br>🤖 Discord: <a href="https://discord.gg/WdZ8RGAx" class="links">https://discord.gg/WdZ8RGAx</a></p>
             </div>
           </div>
         </div>
-        <div class="md:w-1/2 mt-6 md:mt-0 text-center">
-          <!-- <p class="text-lg italic">More team members coming soon...</p> -->
+        <div class="flex mb-4 team-flex">
+          <img src="assets/jaward.jpg" alt="Jaward Sesay" class="w-16 h-16 rounded-full mr-2 member-img">
+          <div>
+            <p class="text-xl font-bold mb-1">Jaward Sesay - Founder</p>
+            <p class="text-lg">Learn more about me through my work:<br>🤗 Huggingface: <a href="https://huggingface.co/Jaward" class="links">https://huggingface.co/Jaward</a><br><svg height="20" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="20" data-view-component="true" class="octicon octicon-mark-github v-align-middle">
+              <path d="M12 1C5.9225 1 1 5.9225 1 12C1 16.8675 4.14875 20.9787 8.52125 22.4362C9.07125 22.5325 9.2775 22.2025 9.2775 21.9137C9.2775 21.6525 9.26375 20.7862 9.26375 19.865C6.5 20.3737 5.785 19.1912 5.565 18.5725C5.44125 18.2562 4.905 17.28 4.4375 17.0187C4.0525 16.8125 3.5025 16.3037 4.42375 16.29C5.29 16.2762 5.90875 17.0875 6.115 17.4175C7.105 19.0812 8.68625 18.6137 9.31875 18.325C9.415 17.61 9.70375 17.1287 10.02 16.8537C7.5725 16.5787 5.015 15.63 5.015 11.4225C5.015 10.2262 5.44125 9.23625 6.1425 8.46625C6.0325 8.19125 5.6475 7.06375 6.2525 5.55125C6.2525 5.55125 7.17375 5.2625 9.2775 6.67875C10.1575 6.43125 11.0925 6.3075 12.0275 6.3075C12.9625 6.3075 13.8975 6.43125 14.7775 6.67875C16.8813 5.24875 17.8025 5.55125 17.8025 5.55125C18.4075 7.06375 18.0225 8.19125 17.9125 8.46625C18.6138 9.23625 19.04 10.2125 19.04 11.4225C19.04 15.6437 16.4688 16.5787 14.0213 16.8537C14.42 17.1975 14.7638 17.8575 14.7638 18.8887C14.7638 20.36 14.75 21.5425 14.75 21.9137C14.75 22.2025 14.9563 22.5462 15.5063 22.4362C19.8513 20.9787 23 16.8537 23 12C23 5.9225 18.0775 1 12 1Z"></path>
+            </svg> Github: <a href="https://github.com/Jaykef" class="links">https://github.com/Jaykef</a></p>
+          </div>
         </div>
       </div>
     </div>
   </section>
-
-  <script>
-    let themeToggleTimeout;
-
-    function toggleTheme() {
-      clearTimeout(themeToggleTimeout);
-      themeToggleTimeout = setTimeout(() => {
-        const body = document.body;
-        const currentTheme = body.getAttribute('data-theme');
-        if (currentTheme === 'dark') {
-          body.removeAttribute('data-theme');
-          localStorage.setItem('theme', 'light');
-          document.querySelector('.theme-toggle').textContent = '🌙';
-        } else {
-          body.setAttribute('data-theme', 'dark');
-          localStorage.setItem('theme', 'dark');
-          document.querySelector('.theme-toggle').textContent = '☀️';
-        }
-      }, 100);
-    }
-
-    window.onload = function() {
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme === 'dark') {
-        document.body.setAttribute('data-theme', 'dark');
-        document.querySelector('.theme-toggle').textContent = '☀️';
-      } else {
-        document.body.removeAttribute('data-theme');
-        document.querySelector('.theme-toggle').textContent = '🌙';
-      }
-    };
-  </script>
 </body>
 </html>
